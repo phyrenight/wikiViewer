@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wikipedia Viewer</title>
+    <meta charset="utf-8">
+    <script src="js/JQuery.js"></script>
+    <script rel="text/javascript" src="js/scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Wiki Viewer</h1>
+    </header>
+    <article>
+      <section>
+        <form>
+        <label for="searchItem">Search</label>
+          <input type="text" name="searchItem" id="searchItem">
+          <button onclick="wikiApi()">Submit</button>
+        </form>
+      </section>
+      <section>
+        <ul id="links">
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>
