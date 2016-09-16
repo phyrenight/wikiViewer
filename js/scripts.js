@@ -5,9 +5,6 @@ function wikiSearch() {
 	var input = document.getElementById('searchItem');
     var searchItem = input.value;
     var $links = $('#links');
-    var TimeOutRequest = setTimeout(function(){
-      $links.text("Wiki failed to load");
-    },8000);
     $links.empty()
     if(searchItem){
 	  var wikiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" +
@@ -33,7 +30,7 @@ function wikiApi(wikiUrl){
 	        var url = "http://en.wikipedia.org/wiki/" + item;
 	        $links.append("<li><a href='" + url + "'>" + item + "</a></li>");
 	      }
-	      clearTimeout(TimeOutRequest)
+	     clearTimeout(TimeOutRequest)
 	    }
 	  });
 }
