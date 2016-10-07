@@ -1,4 +1,8 @@
 function wikiSearch() {
+  /*
+    test and retrieves data for the api.Made seperate in case future page updates use more than one URL.By doing this
+    new functions can use WikiApi. Instead of making multiple functions with an ajax request.
+  */
   var input = document.getElementById('searchItem');
   var searchItem = input.value;
   var $links = $('#links');
@@ -13,6 +17,10 @@ function wikiSearch() {
   }
 }
 function wikiApi(wikiUrl){
+  /*
+    args- wikiUrl - contains the url + the searchword
+    queries wiki and appends info to the page
+  */
   var bootstrap = "col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4";
   var $links = $('#links');
   var TimeOutRequest = setTimeout(function(){
