@@ -1,6 +1,3 @@
-
-
-// find a way to implement DRY, the search and random should pass parameter(url) to a function containing the $.ajax call
 function wikiSearch() {
   var input = document.getElementById('searchItem');
   var searchItem = input.value;
@@ -16,6 +13,7 @@ function wikiSearch() {
   }
 }
 function wikiApi(wikiUrl){
+  var bootstrap = "col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4";
   var $links = $('#links');
   var TimeOutRequest = setTimeout(function(){
     $links.text("Wiki failed to load");
@@ -29,7 +27,7 @@ function wikiApi(wikiUrl){
       for(var i = 0; i < searchList.length; i++){
         var item = searchList[i];
         var url = "http://en.wikipedia.org/wiki/" + item;
-        $links.append("<li><a href='" + url + "'>" + item + "</a></li>");
+        $links.append("<div class='row'><li class='"+bootstrap+"'><a href='" + url + "'>" + item + "</a></li></div>");
       }
       clearTimeout(TimeOutRequest);
     }

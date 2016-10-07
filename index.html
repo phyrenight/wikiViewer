@@ -5,21 +5,40 @@
     <meta charset="utf-8">
     <script src="js/JQuery.js"></script>
     <script rel="text/javascript" src="js/scripts.js"></script>
+    <script rel="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header>
-      <h1>Wiki Viewer</h1>
+    <header class="jumbotron">
+      <h1 class="text-center">Wiki Viewer</h1>
     </header>
     <article>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Search</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" name="searchItem" id="searchItem" class="form-control">
+              </div>
+              <button onclick="wikiSearch()" class="btn btn-default">Submit</button>
+            </form>
+           <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Get Random Wiki</a>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
       <section>
-        <label for="searchItem">Search</label>
-          <input type="text" name="searchItem" id="searchItem">
-          <button onclick="wikiSearch()">Submit</button>
-          <a href="https://en.wikipedia.org/wiki/Special:Random
-">get random wiki</a>
-      </section>
-      <section>
-        <ul id="links">
+        <ul id="links" class="container">
         </ul>
       </section>
     </article>
