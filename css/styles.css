@@ -6,7 +6,13 @@
        - #A9BCDO
        - #373F51
 */
+body{
+    background-color: #373F51;
+}
 
+ .form-container, .navbar-headers, .nav-container{
+    background-color:#EEE;
+}
 
 ul{
 	list-style-type:none;
