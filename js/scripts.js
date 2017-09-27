@@ -1,18 +1,18 @@
-(function() {
+(function begin() {
   $("#submitButton").click(wikiSearch);
 
   /**
    *  Concatenates the Wiki api url and the user search keyword.
    */
   function wikiSearch() {
-    var input = document.getElementById('searchItem');
-    var searchItem = input.value;
+    var input = document.getElementById('searchItem').value;
     var $links = $('#links');
     $links.empty();
-    if(searchItem){
+    if(input){
 	    var wikiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" +
-	    searchItem + "&format=json&callback=wikiCAllBack";
-	    wikiApi(wikiUrl);
+	    input + "&format=json&callback=wikiCAllBack";
+	    var hi  = wikiApi(wikiUrl);
+      console.log(hi)
     }
     else{
       $links.append("Nothing entered");
@@ -23,6 +23,7 @@
  *  @param {string} contains the url + the searchword
  */
   function wikiApi(wikiUrl){
+    //var searchList;
     var bootstrap = "col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4";
     var $links = $('#links');
     var TimeOutRequest = setTimeout(function(){
@@ -34,11 +35,11 @@
       dataType: 'jsonp',
       success: function(data) {
         var searchList = data[1];
+       //  console.log(searchList);
         for(var i = 0; i < searchList.length; i++){
-          var item = searchList[i];
-          var url = "http://en.wikipedia.org/wiki/" + item;
-          $links.append("<div class='row'><li class='listItem"+bootstrap+
-          "'><a href='" + url + "'>" + item + "</a></li></div>");
+          var url = "http://en.wikipedia.org/wiki/" + searchList[i];
+          $links.append("<a href='"+ url +"'><div class='row item'><li class='listItem"+bootstrap+
+          "'>" + searchList[i] + "</li></div></a>");
         }
         clearTimeout(TimeOutRequest);
       }

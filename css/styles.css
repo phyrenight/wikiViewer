@@ -1,3 +1,30 @@
+/*
+  colors
+  header - #EEE
+  form - #F8F8F8
+       - #58A4BO
+       - #A9BCDO
+       - #373F51
+*/
+
+
 ul{
 	list-style-type:none;
+}
+
+.item{
+    /*height: 20px;*/
+    margin: 10px 0px;
+    padding: 8px 0px;
+    border-radius: 5px;
+    background-color:#EEE;
+    border: 1px solid #adadad;
+}
+
+li {
+    font-size: 20px;
+}
+
+a ~ a{
+    margin-top: 10px;
 }
