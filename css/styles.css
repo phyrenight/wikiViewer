@@ -14,6 +14,17 @@ body{
     background-color:#EEE;
 }
 
+.form-container {
+    text-align: center;
+}
+.form-group{
+    display: inline-block;
+}
+
+.random-gen{
+    vertical-align: 11px;
+}
+
 ul{
 	list-style-type:none;
 }
@@ -33,4 +44,14 @@ li {
 
 a ~ a{
     margin-top: 10px;
+}
+
+@media (min-width: 769px){
+    .form-container{
+        text-align: left;
+    }
+
+    .random-gen{
+        vertical-align: -14px;
+    }
 }
