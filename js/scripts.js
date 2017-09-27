@@ -11,6 +11,7 @@
     if(input){
 	    var wikiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" +
 	    input + "&format=json&callback=wikiCAllBack";
+      wikiApi(wikiUrl);
     }
     else{
       $links.append("Nothing entered");
